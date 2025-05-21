@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace AlanVdb\Composer;
+namespace AlanVdb\Composer\Factory;
 
 use AlanVdb\Validator\Definition\ValidatorInterface;
 use AlanVdb\Composer\Definition\ComposerProjectDescriptionValidatorFactoryInterface;
