@@ -20,13 +20,10 @@ class ComposerProjectDescriptionValidator
         if (!is_string($description)) {
             $this->errorMessage = 'Project description must be a string';
         }
-        if (empty($description)) {
-            $this->errorMessage = "Project description cannot be empty";
-        }
         if (strlen($description) > 200) {
             $this->errorMessage = 'Project description should be less than 200 characters';
         }
-        if (!preg_match('/^[\w\s\-\.\,\!\?]+$/u', $description)) {
+        if (preg_match('/[\x00-\x1F\x7F]/', $description)) {
             $this->errorMessage = 'Project description contains invalid characters';
         }
         return empty($this->errorMessage);
